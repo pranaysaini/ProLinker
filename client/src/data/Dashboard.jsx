@@ -22,7 +22,7 @@ const Dashboard = () => {
                   return;
                 }
 
-                const res = await fetch(`http://localhost:5000/api/createprofile/dashboard/${userId}`, {
+                const res = await fetch(`https://prolinker-backend.onrender.com/api/createprofile/dashboard/${userId}`, {
                      method: "GET",
                      credentials: "include",
                     
@@ -57,7 +57,7 @@ const Dashboard = () => {
 
     const submitForm = async () => {
 
-      const response = await fetch('http://localhost:5000/api/creategig', {
+      const response = await fetch('https://prolinker-backend.onrender.com/api/creategig', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -103,7 +103,7 @@ const Dashboard = () => {
           </a>
           <br />
           <button
-            onClick={() => window.open(`http://localhost:5000/portfolios/portfolio-${seller.number}.pdf`, "_blank")}
+            onClick={() => window.open(`https://prolinker-backend.onrender.com/portfolios/portfolio-${seller.number}.pdf`, "_blank")}
             className="mt-3 border-2 border-green-700 hover:bg-green-200 text-green-700 px-4 py-2 rounded-md shadow-md transition"
           >
             View Portfolio

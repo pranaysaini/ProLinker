@@ -35,7 +35,7 @@ const Login = () => {
         try{
             const formData = {userId, password}
 
-            const res = await fetch('http://localhost:5000/api/login', {
+            const res = await fetch('https://prolinker-backend.onrender.com/api/login', {
                 method: "POST",
                 headers: {"content-type": 'application/json'},
                 body: JSON.stringify(formData),

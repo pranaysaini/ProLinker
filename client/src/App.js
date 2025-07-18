@@ -18,7 +18,7 @@ import NotFound from './Pages/NotFound';
 function App() {
 
   useEffect (() => {
-    axios.get("http://localhost:5000/")
+    axios.get("https://prolinker-backend.onrender.com/")
     .then(res => console.log(res.data))
     .catch(err => console.log(err));
   })

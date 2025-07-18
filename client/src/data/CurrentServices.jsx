@@ -17,7 +17,7 @@ const CurrentServices = () => {
   useEffect(() => {
     const fetchGigs = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/creategig/${myNumber}`);
+        const res = await fetch(`https://prolinker-backend.onrender.com/api/creategig/${myNumber}`);
         const data = await res.json();
         setGigs(data.gigs);
       } catch (err) {
@@ -34,7 +34,7 @@ const CurrentServices = () => {
   };
 
   const handleEditSave = async () => {
-    const res = await fetch(`http://localhost:5000/api/creategig/${myNumber}/${editIndex}`, {
+    const res = await fetch(`https://prolinker-backend.onrender.com/api/creategig/${myNumber}/${editIndex}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -51,7 +51,7 @@ const CurrentServices = () => {
   };
 
   const handleDelete = async (index) => {
-    const res = await fetch(`http://localhost:5000/api/creategig/${myNumber}/${index}`, {
+    const res = await fetch(`https://prolinker-backend.onrender.com/api/creategig/${myNumber}/${index}`, {
       method: 'DELETE',
     });
     const data = await res.json();

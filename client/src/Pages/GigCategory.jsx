@@ -21,7 +21,7 @@ const GigCategory = () => {
 
     const fetchSellers = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/creategig/category/${category}`);
+        const res = await fetch(`https://prolinker-backend.onrender.com/api/creategig/category/${category}`);
         const data = await res.json();
         setSellers(data.sellers || []);
       } catch (err) {
@@ -111,7 +111,7 @@ const GigCategory = () => {
                 <p className="text-gray-600">
                   <span className="font-medium">Portfolio:</span>{' '}
                   <a
-                    href={`http://localhost:5000/portfolios/portfolio-${seller.number}.pdf`}
+                    href={`https://prolinker-backend.onrender.com/portfolios/portfolio-${seller.number}.pdf`}
                     target="_blank"
                     rel="noreferrer"
                     className="text-green-600 underline hover:text-green-800"
