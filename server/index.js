@@ -8,13 +8,13 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(cookieParser());
 
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://pro-linker-two.vercel.app',
-];
+// const allowedOrigins = [
+//   'http://localhost:3000',
+//   'https://pro-linker-two.vercel.app',
+// ];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: 'https://pro-linker-two.vercel.app',
   credentials: true
 }));
 app.use(express.json({limit: '10mb'}));
