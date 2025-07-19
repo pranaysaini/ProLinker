@@ -8,15 +8,23 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(cookieParser());
 
-// const allowedOrigins = [
-//   'http://localhost:3000',
-//   'https://pro-linker-two.vercel.app',
-// ];
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://pro-linker-two.vercel.app'
+];
 
 app.use(cors({
-  origin: 'https://pro-linker-two.vercel.app',
-  credentials: include
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
+
+
 app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({extended: false, limit: '10mb'}));
 
