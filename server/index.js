@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 app.use(cors({
   origin: 'https://pro-linker-two.vercel.app',
-  credentials: true
+  credentials: include
 }));
 app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({extended: false, limit: '10mb'}));
