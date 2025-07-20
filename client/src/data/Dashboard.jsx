@@ -16,11 +16,11 @@ const Dashboard = () => {
             const fetchData = async () => {
 
                 const isLoggedIn = localStorage.getItem("userId");
-                if (!isLoggedIn) {
-                  alert("Login required.");
-                  navigate("/login");
-                  return;
-                }
+                // if (!isLoggedIn) {
+                //   alert("Login required.");
+                //   navigate("/login");
+                //   return;
+                // }
 
                 const res = await fetch(`https://prolinker-backend.onrender.com/api/createprofile/dashboard/${userId}`, {
                      method: "GET",
