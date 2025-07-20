@@ -8,6 +8,9 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(cookieParser());
 
+const dotenv = require('dotenv')
+dotenv.config();
+
 const allowedOrigins = [
   'http://localhost:3000',
   'https://pro-linker-two.vercel.app'
