@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import banner from '../assets/futureBanner.png'
+import banner from '../assets/futureBanner.png';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const categories = [
   "Software development", "Website Development", "Wordpress Development",
@@ -12,26 +14,22 @@ const categories = [
 
 const Home = () => {
   const categoriesRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScrollToCategories = () => {
-      if (categoriesRef.current) {
-        categoriesRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
-    window.addEventListener('scroll-to-categories', handleScrollToCategories);
-    return () => {
-      window.removeEventListener('scroll-to-categories', handleScrollToCategories);
-    };
-  }, []);
+    if (location.hash === '#categories') {
+      categoriesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
+
 
   return (
     <div className='pb-32'>
       <img src={banner} alt="banner" className="md:ml-60 w-full max-w-5xl " />
 
-      <h1
-        ref={categoriesRef}
-        className='flex justify-center items-center text-3xl font-[salsa] font-bold mt-10'
+      <h1 id="categories" 
+          ref={categoriesRef}
+          className='flex justify-center items-center text-2xl font-[salsa] font-bold mt-10'
       >
         Explore Categories
       </h1>

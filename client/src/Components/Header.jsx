@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react'; 
+import { Link } from 'react-router-dom';
+import WhyUs from '../TextPages/WhyUs';
+import AboutUs from '../TextPages/AboutUs';
+
 
 const Header = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const checkLogin = () => {
@@ -72,9 +77,9 @@ const Header = () => {
 
         {/* Nav links (desktop only) */}
         <div className="hidden md:flex items-center space-x-6 ml-auto">
-          <h4 className="hover:text-[#009400] hover:underline cursor-pointer ">Find Service</h4>
-          <h4 className="hover:text-[#009400] hover:underline cursor-pointer ">Career Resources</h4>
-          <h4 className="hover:text-[#009400] hover:underline cursor-pointer ">Why ProLinker</h4>
+          <Link to="/#categories"  className="hover:text-[#009400] hover:underline cursor-pointer ">Find Services</Link>
+          <Link to="/WhyUs" className="hover:text-[#009400] hover:underline cursor-pointer ">Why ProLinker</Link>
+          <Link to="/AboutUs" className="hover:text-[#009400] hover:underline cursor-pointer ">About Us</Link>
 
           <button
             onClick={handleClick}
@@ -116,9 +121,10 @@ const Header = () => {
           </button>
         </div>
         <nav className="flex flex-col px-6 py-4 space-y-4 font-semibold">
-          <button className="text-left" onClick={() => setMenuOpen(false)}>Find Service</button>
-          <button className="text-left" onClick={() => setMenuOpen(false)}>Career Resources</button>
-          <button className="text-left" onClick={() => setMenuOpen(false)}>Why ProLinker</button>
+          
+          <Link to="/#categories"  className="hover:text-[#009400] hover:underline cursor-pointer" onClick={() => setMenuOpen(false)} >Find Services</Link>
+          <Link to="/WhyUs" className="text-left" onClick={() => setMenuOpen(false)}>Why ProLinker</Link>
+          <Link to="/AboutUs" className="text-left" onClick={() => setMenuOpen(false)}>About Us</Link>
           {!isLoggedIn ? (
             <button
               onClick={() => {
@@ -129,6 +135,8 @@ const Header = () => {
             >
               Login
             </button>
+
+            
           ):(
             <>
                 <button

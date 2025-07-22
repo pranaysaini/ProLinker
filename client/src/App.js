@@ -14,6 +14,8 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProtectedRoute from './data/ProtectedRoute';
 import NotFound from './Pages/NotFound';
+import WhyUs from './TextPages/WhyUs';
+import AboutUs from './TextPages/AboutUs';
 
 function App() {
 
@@ -53,6 +55,8 @@ function App() {
           <Route path="/:category" element={<GigCategory />}/>
 
           <Route path="/404" element={<NotFound />} />
+          <Route path="/WhyUs" element={<WhyUs/>}></Route>
+          <Route path="/aboutus" element={<AboutUs/>}></Route>
           <Route path="*" element={<NotFound />} />
 
         </Routes>
