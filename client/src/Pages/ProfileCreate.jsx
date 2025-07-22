@@ -47,7 +47,7 @@ const ProfileCreate = () => {
             console.log(res);
           
 
-                const data = await res.json();
+              const data = await res.json();
 
               if (!res.ok) {
                 alert(data.message || "Failed to create profile.");

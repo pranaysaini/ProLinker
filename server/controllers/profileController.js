@@ -16,6 +16,8 @@ exports.getSellerDashboard = async (req, res) => {
 
     res.status(200).json(seller);
   } catch (err) {
+    console.error("Error fetching seller dashboard:", err);
     res.status(500).json({ message: "Server error" });
+    
   }
 };
