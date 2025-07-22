@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import banner from '../assets/futureBanner.png'
 
@@ -13,24 +13,21 @@ const categories = [
 const Home = () => {
   const categoriesRef = useRef(null);
 
-  const handleFindService = () => {
-    if (categoriesRef.current) {
-      categoriesRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  useEffect(() => {
+    const handleScrollToCategories = () => {
+      if (categoriesRef.current) {
+        categoriesRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    window.addEventListener('scroll-to-categories', handleScrollToCategories);
+    return () => {
+      window.removeEventListener('scroll-to-categories', handleScrollToCategories);
+    };
+  }, []);
 
   return (
     <div className='pb-32'>
       <img src={banner} alt="banner" className="md:ml-60 w-full max-w-5xl " />
-
-      <div className="flex justify-center mt-6">
-        <button
-          onClick={handleFindService}
-          className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition-all duration-300"
-        >
-          Find Service
-        </button>
-      </div>
 
       <h1
         ref={categoriesRef}
