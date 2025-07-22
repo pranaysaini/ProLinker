@@ -25,7 +25,6 @@ const ProfileCreate = () => {
             return;
           }
 
-
         const formData = new FormData();
         
         formData.append('userId', userIdFromStorage);
@@ -34,7 +33,6 @@ const ProfileCreate = () => {
         formData.append('contactNumber', contactNumber);
         formData.append('websiteLink', websiteLink);
         formData.append('pdf', pdfFile);
-        
 
         try{
             const res = await fetch("https://prolinker-backend.onrender.com/api/createprofile", {
@@ -44,9 +42,8 @@ const ProfileCreate = () => {
                 body: formData,
             })
 
-            console.log(res);
+              console.log(res);
           
-
               const data = await res.json();
 
               if (!res.ok) {
@@ -55,7 +52,7 @@ const ProfileCreate = () => {
               }
 
               navigate(`/dashboard?number=${data.seller.number}`);
-            
+
         }
         catch(err){
             console.error("Error occurred:", err);
@@ -64,8 +61,6 @@ const ProfileCreate = () => {
     }
     
   return (
-
-
 
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-green-100 p-6">
       <form

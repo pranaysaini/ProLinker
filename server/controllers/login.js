@@ -25,7 +25,7 @@ exports.loginsave = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            sameSite: 'Lax',     // 🟢  allows cross-origin on top-level GET
+            sameSite: 'None',     // allows cross-origin on top-level GET
             secure: true,       
             maxAge: 24 * 60 * 60 * 1000
         });
