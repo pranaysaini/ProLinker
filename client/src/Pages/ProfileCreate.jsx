@@ -28,7 +28,7 @@ const ProfileCreate = () => {
 
         const formData = new FormData();
         
-        formData.append('userId', userId);
+        formData.append('userId', userIdFromStorage);
         formData.append('profileName', profileName);
         formData.append('profileEmail', profileEmail);
         formData.append('contactNumber', contactNumber);
