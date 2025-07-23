@@ -26,7 +26,7 @@ const sellers = new mongoose.Schema({
 
     website: {
         type: String,
-        unique: true
+        
     },
 
     pdf: {

@@ -45,12 +45,12 @@ exports.saveSellerData = async (req, res) => {
         console.error("Detailed error:", err);
         
         if (err.name === 'ValidationError') {
-        return res.status(400).json({ 
-            message: "Validation error",
-            errors: err.errors 
-        });
+            return res.status(400).json({ 
+                message: "Validation error",
+                errors: err.errors 
+            });
         }
-    res.status(500).json({ message: "Failed to create seller profile" });
+        res.status(500).json({ message: "Failed to create seller profile" });
     }
 }
 
