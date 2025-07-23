@@ -79,7 +79,7 @@ const Dashboard = () => {
         navigate(`/currentservices?contactnumber=${seller.number}`)
     }
 
-  if (!seller) return <div>Loading...</div>;
+  if (!seller) return <div className='h-screen flex justify-center items-center text-3xl font-bold'>Loading...</div>;
 
   const categories = [
      "Software development", "Website Development", "Wordpress Development",
