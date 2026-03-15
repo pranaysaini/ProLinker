@@ -2,7 +2,7 @@ Freelance Service Marketplace
 A full-stack web application that allows users to create profiles, list services (gigs), and discover services across multiple categories. The platform enables sellers to showcase their skills and portfolios while buyers can explore available services.
 This project is built with a React frontend and Node.js backend following a REST API architecture.
 
-Features
+Features - 
 User Authentication
 User signup
 Secure login
@@ -25,14 +25,14 @@ Browse services
 Filter services by category
 Explore different service types
 
-Tech Stack
+Tech Stack - 
 Frontend
 React
 Tailwind CSS
 React Router
 Axios
 
-Backend
+Backend - 
 Node.js
 Express.js
 REST APIs
@@ -40,25 +40,25 @@ JWT Authentication
 Database
 MongoDB
 
-Other Tools
+Other Tools - 
 Multer (file uploads)
 
-Environment variables
+Environment variables - 
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret_key
 
 
-Installation
+Installation - 
 Clone Repository
 git clone https://github.com/pranaysaini/ProLinker.git
 cd prolinker
 
-Install Dependencies
+Install Dependencies - 
 Frontend
 cd client
 npm install
 
-Backend
+Backend - 
 cd server
 npm install
 
